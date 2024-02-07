@@ -1,0 +1,551 @@
+-- Theme = DarkTheme - LightTheme - BloodTheme - GrapeTheme - Ocean - Midnight - Sentinel - Synapse - Serpent
+-- Plantilla Con Mas Cosas Que Enel Video
+-- JUANKO MODS YT
+local Intro = Instance.new("ScreenGui")
+local Logo = Instance.new("ImageLabel")
+local Circle = Instance.new("UICorner")
+
+Intro.Name = "Intro"
+Intro.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Intro.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Logo.Name = "Logo"
+Logo.Parent = Intro
+Logo.AnchorPoint = Vector2.new(0.5, 0.5)
+Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo.BackgroundTransparency = 1.000
+Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Logo.BorderSizePixel = 0
+Logo.Position = UDim2.new(0.5, 0, 0.5, 0)
+Logo.Size = UDim2.new(0, 400, 0, 400)
+Logo.Image = "rbxassetid://13575694232"
+Logo.ImageTransparency = 0.99999999
+Logo.ScaleType = Enum.ScaleType.Crop
+
+Circle.CornerRadius = UDim.new(110235, 0)
+Circle.Name = "Circle"
+Circle.Parent = Logo
+
+-- Scripts:
+
+local function ACNFZ_fake_script() -- Intro.Animate 
+    local script = Instance.new('LocalScript', Intro)
+
+    wait(1)
+    local noob = script.Parent.Logo
+    Tween = function(Obj, Time, Settings)    
+        game:GetService("TweenService"):Create(Obj, TweenInfo.new(Time), Settings):Play()
+    end
+    Tween(noob, 1.3, {ImageTransparency = 2})
+    
+    wait(3)
+    
+    Tween(noob, 1.3, {ImageTransparency = 2
+       
+    })
+    wait(1)
+
+
+print(juanko) 
+end
+coroutine.wrap(ACNFZ_fake_script)()
+
+wait(5) 
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vdc16Dh7"))()
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("ImageLabel")
+local TextButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Frame.Name = "Frame"
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0, 0, 0.65, -100)
+Frame.Size = UDim2.new(0, 100, 0, 50)
+Frame.Image = "rbxassetid://3570695787"
+Frame.ImageColor3 = Color3.fromRGB(11, 18, 7)
+Frame.ImageTransparency = 0.200
+Frame.ScaleType = Enum.ScaleType.Slice
+Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+Frame.SliceScale = 0.120
+Frame.Active = true
+Frame.ZIndex = 10
+
+TextButton.Parent = Frame
+TextButton.AnchorPoint = Vector2.new(0, 0.5)
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Position = UDim2.new(0.022162716, 0, 0.85, -20)
+TextButton.Size = UDim2.new(1, -10, 1, 0) 
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Abrir/Fechar"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 20.000
+TextButton.TextWrapped = true
+TextButton.ZIndex = 11 
+TextButton.MouseButton1Down:Connect(function()
+    Library:ToggleUI()
+end)
+
+-- Dragging functionality for Mobile and PC:
+local draggingEnabled = false
+local dragStartPos = nil
+local frameStartPos = nil
+
+local function updatePosition(input)
+    local delta = input.Position - dragStartPos
+    Frame.Position = UDim2.new(
+        frameStartPos.X.Scale,
+        frameStartPos.X.Offset + delta.X,
+        frameStartPos.Y.Scale,
+        frameStartPos.Y.Offset + delta.Y
+    )
+end
+
+TextButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingEnabled = true
+        dragStartPos = input.Position
+        frameStartPos = Frame.Position
+    end
+end)
+
+TextButton.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingEnabled = false
+    end
+end)
+
+TextButton.InputChanged:Connect(function(input)
+    if draggingEnabled and
+        (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        updatePosition(input)
+    end
+end)
+
+Frame.InputChanged:Connect(function(input)
+    if draggingEnabled and
+        (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        updatePosition(input)
+    end
+end) 
+
+local Window = Library.CreateLib("SERPENTE X | 🇧🇷 | Brookhaven🏠 | err0r 129", "GrapeTheme")
+
+local Tab = Window:NewTab("HOME🏠") 
+local Section = Tab:NewSection("Scripts Brook")
+Section:NewButton("Ice hub🖥️", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMae17/NewIceHub/main/Brookhaven"))()
+end)
+Section:NewButton("Redz Hub🖥️", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
+end)
+Section:NewButton("Juanko Hub🖥️", "Executar Script", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/d5BS5qiX"))()
+end)
+Section:NewButton("Unfair hub🖥️", "Executar Script", function()
+ loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
+end)
+local Section = Tab:NewSection("Nomes")
+Section:NewButton("Nome ERRØR 129🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","ERROR 129")
+end)
+Section:NewButton("Nome Dark🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","Dark")
+end)
+Section:NewButton("Nome Zer0🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","🌐Zero🌐")
+end)
+Section:NewButton("Nome OWER🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","OWER")
+end)
+Section:NewButton("Nome ADMIN🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","ADMIN")
+end)
+Section:NewButton("Nome Joko Destroy🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","Joko Destroy Kids")
+end)
+Section:NewButton("Nome ADM🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","ADM")
+end)
+Section:NewButton("Nome NotFound404🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","NotFound404")
+end)
+Section:NewButton("Nome Unwell🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","Unwell")
+end)
+Section:NewButton("Nome Nokia ADM🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","🌐Nokia ADM🌐")
+end)
+Section:NewButton("Nome Serpente X🏷️", "Executar Script", function()
+ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","Serpente X")
+end)
+local Tab = Window:NewTab("Main🧬")
+local Section = Tab:NewSection("Main Config")
+Section:NewTextBox("WalkSpeed","Speed", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+Section:NewTextBox("JumpPower","Jump", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = txt
+end)
+Section:NewToggle("Hitbox🍁", "info" ,function(state)
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Update-script-hitbox-9326"))()
+end)
+local Tab = Window:NewTab("Trolling🤷")
+local Section = Tab:NewSection("All Kills") 
+Section:NewButton("Fling all🔪", "Executar Script", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end)
+local Section = Tab:NewSection("Flings")
+Section:NewButton("Kill Yeet🌟", "Executar Script", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/saMtiek2",true))()
+end)
+Section:NewButton("Kill SystemBroken🌟", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
+end)
+
+local Tab = Window:NewTab("Others💬")
+local Section = Tab:NewSection("GUIS|HUBS")
+
+Section:NewButton("OrangeX🍊", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/ImJosh66/OrangeX-Hub-V3-Rel/main/OrangeX%20V3%20Milvan.txt"))()
+end)
+Section:NewButton("Gigachead🗿", "Executar Script", function()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/OWJBWKQLAISH/GigaChad-Hub/main/Gigachad%20Hub%20V4'))()
+end)
+Section:NewButton("Game Hub🎮", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/TakeModzz/Games-Hub-Script/main/Games%20Hub%20(Always%20updated)"))()
+end)
+Section:NewButton("Rainbow Hub🌈", "Executar Script", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/AivNBdLk"))()
+end)
+Section:NewButton("Pendulum Hub🖥️", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V5.lua"))()
+end)
+local Section = Tab:NewSection("Scripts")
+Section:NewButton("Nameless ADMIN🍪", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+end)
+Section:NewButton("Fly Gui🍃", "Executar Script", function()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
+end)
+local Tab = Window:NewTab("Carros🚘")
+local Section = Tab:NewSection("Velocidade Overboard")
+Section:NewTextBox("Overboard","Speed", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+local Section = Tab:NewSection("Velocidade Bicicleta")
+Section:NewTextBox("Bicicleta","Speed", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+local Section = Tab:NewSection("Velocidade Skate")
+Section:NewTextBox("Skate","Speed", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+local Section = Tab:NewSection("Outros")
+Section:NewButton("Vehicle Fly", "Executar Script", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+end)
+local Tab = Window:NewTab("Avatar👔") 
+local Section = Tab:NewSection("Catalogue")
+Section:NewButton("HeadLess(Visual)🎃", "Executar Script", function()
+ -- services
+local players = game:GetService("Players")
+local starterGui = game:GetService("StarterGui")
+-- objects
+local player = players.LocalPlayer
+local character = player.Character
+local humanoid = character:FindFirstChildWhichIsA("Humanoid")
+local head, torso = character:FindFirstChild("Head"), character:FindFirstChild("UpperTorso")
+local resetBindable = Instance.new("BindableEvent")
+-- variables
+local destroyFunc, resetBindableConnection = character.Destroy, nil
+-- main
+-- initializes the permadeath
+player.Character = nil
+player.Character = character
+task.wait(players.RespawnTime + .05)
+
+humanoid.BreakJointsOnDeath = false
+humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+if humanoid.RigType == Enum.HumanoidRigType.R15 then
+   task.defer(destroyFunc, (head.Neck))
+end
+task.defer(destroyFunc, head) -- and we destroy the head
+
+resetBindableConnection = resetBindable.Event:Connect(function()
+   starterGui:SetCore("ResetButtonCallback", true)
+   resetBindableConnection:Disconnect()
+
+   if player.Character == character then
+       character:Destroy()
+       local daModel = Instance.new("Model")
+       local _daModelHumanoid = Instance.new("Humanoid")
+       _daModelHumanoid.Parent = daModel
+       player.Character = daModel
+
+       task.delay(players.RespawnTime, destroyFunc, daModel)
+   else
+       player.Character:BreakJoints()
+   end
+end)
+starterGui:SetCore("ResetButtonCallback", resetBindable)
+
+--fixed for synapse
+end)
+Section:NewButton("Korblox And Headless🎃👖", "Executar Script", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/H5yx10Jq'))()
+end)
+local Section = Tab:NewSection("Animations")
+Section:NewButton("Fe emotes all🤹", "Executar Script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FEmotesGui/main/FEmotesGui.lua", true))()
+end)
+Section:NewButton("Animation Hub(FE)💓", "Executar Script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FEAnimationGui/main/FEAnimationGui.lua", true))() 
+end)
+local Tab = Window:NewTab("Dev.err0r 129🔱")
+local Section = Tab:NewSection("SCRIPTS|err0r") 
+Section:NewButton("🌐Noclip HUB🌐", "Executar Script", function()
+ local Workspace = game:GetService("Workspace")
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local Noclip = Instance.new("ScreenGui")
+local BG = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Toggle = Instance.new("TextButton")
+local StatusPF = Instance.new("TextLabel")
+local Status = Instance.new("TextLabel")
+local Credit = Instance.new("TextLabel")
+local Plr = Players.LocalPlayer
+local Clipon = false
+
+Noclip.Name = "Noclip Hub"
+Noclip.Parent = game.CoreGui
+
+BG.Name = "BG"
+BG.Parent = Noclip
+BG.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+BG.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+BG.BorderSizePixel = 2
+BG.Position = UDim2.new(0.149479166, 0, 0.82087779, 0)
+BG.Size = UDim2.new(0, 210, 0, 127)
+BG.Active = true
+BG.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = BG
+Title.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+Title.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+Title.BorderSizePixel = 2
+Title.Size = UDim2.new(0, 210, 0, 33)
+Title.Font = Enum.Font.Highway
+Title.Text = "Noclip hub"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.FontSize = Enum.FontSize.Size32
+Title.TextSize = 30
+Title.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Title.TextStrokeTransparency = 0
+
+Toggle.Parent = BG
+Toggle.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+Toggle.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+Toggle.BorderSizePixel = 2
+Toggle.Position = UDim2.new(0.152380958, 0, 0.374192119, 0)
+Toggle.Size = UDim2.new(0, 146, 0, 36)
+Toggle.Font = Enum.Font.Highway
+Toggle.FontSize = Enum.FontSize.Size28
+Toggle.Text = "Toggle"
+Toggle.TextColor3 = Color3.new(1, 1, 1)
+Toggle.TextSize = 25
+Toggle.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Toggle.TextStrokeTransparency = 0
+
+StatusPF.Name = "StatusPF"
+StatusPF.Parent = BG
+StatusPF.BackgroundColor3 = Color3.new(1, 1, 1)
+StatusPF.BackgroundTransparency = 1
+StatusPF.Position = UDim2.new(0.314285725, 0, 0.708661377, 0)
+StatusPF.Size = UDim2.new(0, 56, 0, 20)
+StatusPF.Font = Enum.Font.Highway
+StatusPF.FontSize = Enum.FontSize.Size24
+StatusPF.Text = "Status:"
+StatusPF.TextColor3 = Color3.new(1, 1, 1)
+StatusPF.TextSize = 20
+StatusPF.TextStrokeColor3 = Color3.new(0.333333, 0.333333, 0.333333)
+StatusPF.TextStrokeTransparency = 0
+StatusPF.TextWrapped = true
+
+Status.Name = "Status"
+Status.Parent = BG
+Status.BackgroundColor3 = Color3.new(1, 1, 1)
+Status.BackgroundTransparency = 1
+Status.Position = UDim2.new(0.580952346, 0, 0.708661377, 0)
+Status.Size = UDim2.new(0, 56, 0, 20)
+Status.Font = Enum.Font.Highway
+Status.FontSize = Enum.FontSize.Size14
+Status.Text = "off"
+Status.TextColor3 = Color3.new(0.666667, 0, 0)
+Status.TextScaled = true
+Status.TextSize = 14
+Status.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Status.TextWrapped = true
+Status.TextXAlignment = Enum.TextXAlignment.Left
+
+Credit.Name = "Credit"
+Credit.Parent = BG
+Credit.BackgroundColor3 = Color3.new(1, 1, 1)
+Credit.BackgroundTransparency = 1
+Credit.Position = UDim2.new(0.195238099, 0, 0.866141737, 0)
+Credit.Size = UDim2.new(0, 128, 0, 17)
+Credit.Font = Enum.Font.SourceSans
+Credit.FontSize = Enum.FontSize.Size18
+Credit.Text = "Created by err0r 129"
+Credit.TextColor3 = Color3.new(1, 1, 1)
+Credit.TextSize = 16
+Credit.TextStrokeColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+Credit.TextStrokeTransparency = 0
+Credit.TextWrapped = true
+
+Toggle.MouseButton1Click:connect(function()
+	if Status.Text == "off" then
+		Clipon = true
+		Status.Text = "on"
+		Status.TextColor3 = Color3.new(0,185,0)
+		Stepped = game:GetService("RunService").Stepped:Connect(function()
+			if not Clipon == false then
+				for a, b in pairs(Workspace:GetChildren()) do
+                if b.Name == Plr.Name then
+                for i, v in pairs(Workspace[Plr.Name]:GetChildren()) do
+                if v:IsA("BasePart") then
+                v.CanCollide = false
+                end end end end
+			else
+				Stepped:Disconnect()
+			end
+		end)
+	elseif Status.Text == "on" then
+		Clipon = false
+		Status.Text = "off"
+		Status.TextColor3 = Color3.new(170,0,0)
+	end
+end)
+end)
+Section:NewButton("🌐SYSTEM ANDROID🌐", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Hax0rzHub/AndroidSystemByDefense129/main/Defense%20129%20system%20android.txt"))()
+end)
+local Tab = Window:NewTab("itens💐") 
+local Section = Tab:NewSection("itens Visuais")
+Section:NewButton("itens-Im Patrick✨", "Executar Script", function()
+ loadstring(game:HttpGet(('https://pastefy.app/VYIAk3o1/raw'),true))()
+end)
+Section:NewButton("err0r129 speed✨", "Executar Script", function()
+ --Made By Raspyredstoner
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "err0r129 Speed"
+tool.Activated:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 800
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+Section:NewButton("err0r129 Jump✨", "Executar Script", function()
+ --Made By Raspyredstoner
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "err0r129 Jump"
+tool.Activated:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 500
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+local Tab = Window:NewTab("Misc☎️") 
+local Section = Tab:NewSection("Scripts")
+Section:NewButton("Shiftlock🔒", "Executar Script", function()
+ loadstring(game:HttpGet("https://scriptblox.com/raw/Baseplate-Universal-Script-Permanent-Shift-Lock-6924"))()
+end)
+Section:NewButton("Tirar travamentos🤖", "Executar Script", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/y5reZYnG", true))()
+end)
+Section:NewButton("infinite Yield👾", "Executar Script", function()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+Section:NewButton("Infinite Jump🌪️", "Executar Script", function()
+ local gui = Instance.new("ScreenGui")
+gui.Name = "DraggableGUI"
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Name = "DraggableFrame"
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0, 100, 0, 100)
+frame.BackgroundTransparency = 0.4
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local button = Instance.new("TextButton")
+button.Name = "InfJumpButton"
+button.Size = UDim2.new(0.8, 0, 0, 30)
+button.Position = UDim2.new(0.1, 0, 0.5, -15)
+button.BackgroundColor3 = Color3.new(0, 0.5, 1)
+button.Font = Enum.Font.SourceSans
+button.TextColor3 = Color3.new(1, 1, 1)
+button.TextSize = 14
+button.Text = "InfJump"
+button.Parent = frame
+
+local label = Instance.new("TextLabel")
+label.Name = "CreatorLabel"
+label.Size = UDim2.new(0, 200, 0, 20)
+label.Position = UDim2.new(0, 0, 0, -20)
+label.BackgroundTransparency = 1
+label.Font = Enum.Font.SourceSansBold
+label.TextColor3 = Color3.new(1, 1, 1)
+label.TextSize = 14
+label.Text = "Made by err0r129"
+label.Parent = frame
+
+local infiniteJumpEnabled = false
+
+local function onButtonClick()
+    infiniteJumpEnabled = not infiniteJumpEnabled
+    button.Text = infiniteJumpEnabled and "Disable InfJump" or "Enable InfJump"
+end
+
+button.MouseButton1Click:Connect(onButtonClick)
+
+game:GetService("UserInputService").JumpRequest:Connect(function()
+    if infiniteJumpEnabled then
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+    end
+end)
+end)
+local Tab = Window:NewTab("funny🤣") 
+local Section = Tab:NewSection("Scripts")
+Section:NewButton("Chat Art☕", "Executar Script", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/omegachadgaming/mongus/main/main.lua", true))()
+end)
+Section:NewButton("telekinesis☕", "Executar Script", function()
+ loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-teke-9676"))()
+end)
+Section:NewButton("Btools☕", "Executar Script", function()
+ a = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+a.BinType = 2
+b = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+b.BinType = 3
+c = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+c.BinType = 4
+end)
+Section:NewButton("Ghost Hub☕", "Executar Script", function()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
